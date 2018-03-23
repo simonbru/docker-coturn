@@ -11,6 +11,7 @@ RUN apt-get update \
 
 COPY turnserver.sh /turnserver.sh
 
+USER "turnserver"
 VOLUME ["/conf"]
 EXPOSE 3478 3478/udp
 ENTRYPOINT ["dumb-init", "--", "/turnserver.sh"]
